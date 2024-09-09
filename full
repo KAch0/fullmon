@@ -1,3 +1,3 @@
 if getgenv().b then return end
 getgenv().b = true
-game:GetService("TeleportService"):TeleportToPlaceInstance(7449423635, "e8ffd172-2ff8-4f21-95a7-e9825b619721", game:GetService("Players").LocalPlayer)
+game:GetService("TeleportService"):TeleportToPlaceInstance(7449423635, "da9e636e-85d6-408c-8571-b4b514cf206e", game:GetService("Players").LocalPlayer)
