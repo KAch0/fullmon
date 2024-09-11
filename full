@@ -1,1 +1,20 @@
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+local webhookURL = "https://discord.com/api/webhooks/1113148780670357615/pKB5Y6m9XjvqbkEmGrAxIt7AA3wlf5--_qp5vUdvGKvMeCn85jwm1IAr1Sp1cELMjdh3"
 
+local function sendPlayerCount()
+    local playerCount = #Players:GetPlayers()
+    
+    local data = {
+        ["content"] = "Current player count: " .. playerCount
+    }
+
+    local jsonData = HttpService:JSONEncode(data)
+
+    HttpService:PostAsync(webhookURL, jsonData, Enum.HttpContentType.ApplicationJson)
+end
+
+while true do
+    sendPlayerCount()
+    wait(60) -- รอ 60 วินาที หรือ 1 นาที
+end
